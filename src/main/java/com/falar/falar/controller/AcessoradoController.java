@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.falar.falar.model.Acessorado;
 import com.falar.falar.repository.AcessoradoRepository;
-import com.falar.falar.repository.ResponsavelRepository;
 
 @RestController
 @RequestMapping("/acessorados")
@@ -22,9 +21,6 @@ public class AcessoradoController {
 
     @Autowired
     private AcessoradoRepository acessoradoRepository;
-
-    @Autowired
-    private ResponsavelRepository responsavelRepository;
 
     @GetMapping
     public List<Acessorado> getAllAcessorados() {
