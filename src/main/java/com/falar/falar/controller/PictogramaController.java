@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.falar.falar.service.PictogramaService;
 
 @Controller
-@RequestMapping("/api/pictogramas")
+@RequestMapping("/api/pictogramas_save")
 public class PictogramaController {
 
     private final PictogramaService pictogramaService;
@@ -21,7 +21,9 @@ public class PictogramaController {
     }
 
     @PostMapping("/{id}/{keyword}")
-    public ResponseEntity<?> salvarPictograma(@PathVariable String id, @PathVariable String keyword,
+    public ResponseEntity<?> salvarPictograma(
+            @PathVariable String id,
+            @PathVariable String keyword,
             @RequestBody String nome) {
         try {
             pictogramaService.salvarPictograma(id, keyword, nome);
