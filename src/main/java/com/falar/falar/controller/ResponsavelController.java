@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.falar.falar.model.Responsavel;
 import com.falar.falar.service.ResponsavelService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/responsaveis")
 public class ResponsavelController {
@@ -22,7 +24,7 @@ public class ResponsavelController {
     private ResponsavelService responsavelService;
 
     @PostMapping
-    public Responsavel criarResponsavel(@RequestBody Responsavel responsavel) {
+    public Responsavel criarResponsavel(@Valid @RequestBody Responsavel responsavel) {
         return responsavelService.salvarResponsavel(responsavel);
     }
 

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.falar.falar.model.Usuario;
 import com.falar.falar.repository.UsuarioRepository;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
@@ -20,7 +22,7 @@ public class UsuarioController {
     private UsuarioRepository usuarioRepository;
 
     @PostMapping
-    public Usuario criarUsuario(@RequestBody Usuario usuario) {
+    public Usuario criarUsuario(@Valid @RequestBody Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
 

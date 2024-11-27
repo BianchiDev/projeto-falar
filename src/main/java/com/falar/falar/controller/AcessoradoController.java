@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.falar.falar.model.Acessorado;
 import com.falar.falar.repository.AcessoradoRepository;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/acessorados")
 public class AcessoradoController {
@@ -28,7 +30,7 @@ public class AcessoradoController {
     }
 
     @PostMapping
-    public Acessorado createAcessorado(@RequestBody Acessorado acessorado) {
+    public Acessorado createAcessorado(@Valid @RequestBody Acessorado acessorado) {
         return acessoradoRepository.save(acessorado);
     }
 
